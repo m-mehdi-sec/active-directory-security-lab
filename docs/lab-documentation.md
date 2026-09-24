@@ -2,6 +2,8 @@
 
 This document contains the detailed implementation record, verification procedures, commands, troubleshooting notes, and observed results from the Active Directory Security Lab.
 
+[← Back to project overview](../README.md)
+
 The purpose of this file is to provide technical evidence of the work performed in the lab. It intentionally goes deeper than the repository README and focuses on configuration details, validation, problems encountered, and the methods used to troubleshoot them.
 
 ---
