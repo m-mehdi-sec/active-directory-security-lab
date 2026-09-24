@@ -563,16 +563,8 @@ active-directory-security-lab/
 ├── images/
 │   └── ...
 └── README.md
+
 ```
-
-
-## Documentation
-
-Detailed technical documentation, implementation steps, commands, validation results, and troubleshooting are available here:
-
-[**Lab Documentation**](docs/lab-documentation.md)
-
----
 
 ## Screenshots
 
@@ -641,6 +633,12 @@ Detailed technical documentation, implementation steps, commands, validation res
 ![Active Directory Security Auditing](images/11-ad-security-auditing.png)
 
 *Security log verification showing the lifecycle of the temporary `logg.test` account: account creation (Event ID 4720), addition to `GG-IT-Users` (Event ID 4728), and account deletion (Event ID 4726).*
+
+## Documentation
+
+Detailed technical documentation, implementation steps, commands, validation results, and troubleshooting are available here:
+
+[**Lab Documentation**](docs/lab-documentation.md)
 
 ---
 
