@@ -565,13 +565,12 @@ active-directory-security-lab/
 └── README.md
 ```
 
----
 
 ## Documentation
 
-Detailed technical documentation, implementation notes, verification results, and security findings are available in:
+Detailed technical documentation, implementation steps, commands, validation results, and troubleshooting are available here:
 
-[`docs/lab-documentation.md`](docs/lab-documentation.md)
+[**Lab Documentation**](docs/lab-documentation.md)
 
 ---
 
