@@ -574,6 +574,76 @@ Detailed technical documentation, implementation steps, commands, validation res
 
 ---
 
+## Screenshots
+
+### Active Directory OU Structure
+
+![Active Directory OU Structure](images/01-ad-ou-structure.png)
+
+*Active Directory organizational structure for the `lab.local` domain, separating administrative accounts, security groups, helpdesk testing, servers, users, departmental OUs, and domain workstations.*
+
+### Active Directory Users and Security Groups
+
+![Active Directory Users and Security Groups](images/02-ad-users-security-groups.png)
+
+*PowerShell enumeration of domain users and security groups within the LAB structure, including Global security groups and the Domain Local group used for the AGDLP access model.*
+
+### Windows 11 Domain Membership
+
+![Windows 11 Domain Membership](images/03-w11-domain-membership.png)
+
+*Windows 11 client verification showing successful membership in `lab.local`, the configured `192.168.10.20/24` address, and the Domain Controller at `192.168.10.10` as the DNS server.*
+
+### Workstation Security Group Policy
+
+![Workstation Security Group Policy](images/04-gpo-workstation-security.png)
+
+*Workstation security GPO configuration showing `SEC-W11-Basic-Security` applied to the Workstations OU with the interactive logon policy configured to hide the last signed-in user.*
+
+### User Group Policy Scope
+
+![User Group Policy Scope](images/05-gpo-user-scope.png)
+
+*User-based Group Policy configuration showing `CFG-Users-Basic` scoped to the Finance OU and configured to prohibit access to Control Panel and PC settings.*
+
+### Group Policy Result Verification
+
+![Group Policy Result Verification](images/06-gpo-result-verification.png)
+
+*`gpresult` verification on `W11-CLIENT` confirming that `SEC-W11-Basic-Security` and other applicable domain policies were successfully processed from `WIN-SRV2025.lab.local`.*
+
+### Helpdesk Delegation and Least Privilege
+
+![Helpdesk Delegation and Least Privilege](images/07-helpdesk-delegation.png)
+
+*Delegated permissions for `GG-Helpdesk`, allowing password resets on descendant user objects without granting broad administrative privileges.*
+
+### FSMO Role Verification
+
+![FSMO Role Verification](images/08-fsmo-roles.png)
+
+*FSMO role verification using `netdom query fsmo`, confirming that all five Active Directory operations master roles are currently held by `WIN-SRV2025.lab.local`.*
+
+### Domain Controller Advertising Diagnostic
+
+![Domain Controller Advertising Diagnostic](images/09-dcdiag-advertising.png)
+
+*Targeted `dcdiag` test confirming Domain Controller connectivity while identifying that `WIN-SRV2025` is not currently advertising as a time server.*
+
+### Domain Controller Time Synchronization Status
+
+![Domain Controller Time Synchronization Status](images/10-time-sync-status.png)
+
+*Windows Time Service status showing the Domain Controller as not synchronized and using the Hyper-V VM IC Time Synchronization Provider as its current time source.*
+
+### Active Directory Security Auditing
+
+![Active Directory Security Auditing](images/11-ad-security-auditing.png)
+
+*Security log verification showing the lifecycle of the temporary `logg.test` account: account creation (Event ID 4720), addition to `GG-IT-Users` (Event ID 4728), and account deletion (Event ID 4726).*
+
+---
+
 ## Disclaimer
 
 This project was created in an isolated lab environment for educational and cybersecurity training purposes. It does not represent a production Active Directory deployment.
